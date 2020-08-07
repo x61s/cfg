@@ -7,44 +7,7 @@ URxvt.cursorBlink: true
 
 URxvt.underlineURLs:  true
 ! URxvt.letterSpace: -1
-
-!   ! special
-!   *.foreground:   #a3a5a4
-!   *.background:   #030304
-!   ! *background: rgba:0000/0000/0200/c800
-!   *.cursorColor:  #c5c8c6
-!   
-!   ! black
-!   *.color0:       #282a2e
-!   *.color8:       #373b41
-!   
-!   ! red
-!   *.color1:       #a54242
-!   *.color9:       #cc6666
-!   
-!   ! green
-!   *.color2:       #4e9440
-!   *.color10:      #72bd68
-!   
-!   ! yellow
-!   *.color3:       #de935f
-!   *.color11:      #f0c674
-!   
-!   ! blue
-!   *.color4:       #5f819d
-!   *.color12:      #81a2be
-!   
-!   ! magenta
-!   *.color5:       #85678f
-!   *.color13:      #b294bb
-!   
-!   ! cyan
-!   *.color6:       #5e8d87
-!   *.color14:      #8abeb7
-!   
-!   ! white
-!   *.color7:       #707880
-!   *.color15:      #c1c4c2
+URxvt.internalBorder: 10
 
 *background:            #272827
 *foreground:            #657b83
@@ -53,8 +16,6 @@ URxvt.underlineURLs:  true
 *cursorColor:           #16A085
 *pointerColorBackground:#2B2C2B
 *pointerColorForeground:#16A085
-
-URxvt.internalBorder: 6
 
 ! special
 *.foreground:   #bfbfbf
@@ -92,13 +53,4 @@ URxvt.internalBorder: 6
 ! white
 *.color7:       #bfbfbf
 *.color15:      #bfbfbf
-
-! SXIV COLORS
-sxiv.win_bg_color: #21211F
-sxiv.win_fs_color: #2E2E2C
-sxiv.sel_color: #2E2E2C
-sxiv.bar_bg_color: #292927
-sxiv.bar_fg_color: #B8B9B4
-sxiv.win_width: 460
-sxiv.win_height: 350
 
