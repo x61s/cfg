@@ -31,7 +31,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
+#set $refresh_i3status killall -SIGUSR1 i3status
+set $refresh_i3status pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
@@ -101,17 +102,17 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # lock screen
-bindsym $mod+esc exec i3lock
+bindsym $mod+Escape exec i3lock --color=000000 --ignore-empty-password
 
 # focus the child container
 #bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:term"
-set $ws2 "2:web"
-set $ws3 "3:chat"
-set $ws4 "4:mail"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -211,7 +212,7 @@ bar {
                 inactive_workspace #333333 #222222 #888888
                 urgent_workspace   #2f343a #900000 #ffffff
         }
-        status_command i3status
+        status_command i3blocks
 	#mode hide
 }
 
@@ -230,6 +231,7 @@ client.placeholder	$foreground	$background	$foreground	$color4		$color4
 default_border pixel 1px
 
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Screenshots/'
+bindsym $mod+Print exec scrot -u '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Screenshots/'
 
 # Floating window mode by default
 # for_window [class="^Steam$"] floating enable
@@ -245,3 +247,6 @@ bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Screensh
 exec --no-startup-id urxvt
 exec --no-startup-id urxvt
 #exec --no-startup-id urxvt -e flatpak run com.valvesoftware.Steam
+
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
