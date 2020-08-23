@@ -230,6 +230,8 @@ client.placeholder	$foreground	$background	$foreground	$color4		$color4
 
 default_border pixel 1px
 
+# Screenshots
+
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Screenshots/'
 bindsym $mod+Print exec scrot -u '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Screenshots/'
 
@@ -244,6 +246,7 @@ bindsym $mod+Print exec scrot -u '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/
 #workspace_layout <default|stacking|tabbed>
 #workspace_layout tabbed
 
+exec compton --config ~/.config/compton.conf
 exec --no-startup-id urxvt
 exec --no-startup-id urxvt
 #exec --no-startup-id urxvt -e flatpak run com.valvesoftware.Steam
