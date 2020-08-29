@@ -38,14 +38,14 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec st -f "Terminus Bold:size=12"
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run -fn 'xos4Terminus:Bold:size=14'
+bindsym $mod+d exec rofi -show
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -210,7 +210,7 @@ bar {
                 urgent_workspace   #2f343a #900000 #ffffff
         }
         status_command i3blocks
-	#mode hide
+	mode invisible
 }
 
 # Theme colors
@@ -223,7 +223,6 @@ client.unfocused       	$foreground	$background	$foreground	$color4		$color4
 client.focused_inactive	$foreground	$background	$foreground	$color4		$color4
 client.urgent		$foreground	$background	$foreground	$color4		$color4
 client.placeholder	$foreground	$background	$foreground	$color4		$color4
-
 
 default_border pixel 1px
 
@@ -238,15 +237,14 @@ bindsym $mod+Print exec scrot -u '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/
 # Window position
 # assign [class="^Firefox$"] $ws2
 
-#exec --no-startup-id xwallpaper --zoom ~/Pictures/.wallpaper.png
+exec --no-startup-id xwallpaper --zoom ~/Pictures/.wallpaper.jpg
 
 #workspace_layout <default|stacking|tabbed>
 #workspace_layout tabbed
 
-exec compton --config ~/.config/compton.conf
-exec --no-startup-id urxvt
-exec --no-startup-id urxvt
-#exec --no-startup-id urxvt -e flatpak run com.valvesoftware.Steam
+exec picom
+exec polybar i3wm
+exec --no-startup-id rofi -show drun
 
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks

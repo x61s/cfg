@@ -1,13 +1,17 @@
+URxvt*font: xft:xos4Terminus:Bold:size=14
+URxvt*depth: 32
+
 Xft.dpi:        96
-Xft.antialias:  true
 Xft.rgba:       rgb
+Xft.antialias:  true
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
-xterm*faceName: xos4 Terminus:style=Bold
-xterm*faceSize: 14
-xterm*renderFont: true
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.saveLines: 3000
 
+URxvt.internalBorder: 10
 *background:            #272827
 *foreground:            #657b83
 *fading:                15
