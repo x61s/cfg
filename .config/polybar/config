@@ -22,7 +22,8 @@ background = #222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
+#foreground-alt = #555
+foreground-alt = #dfdfdf
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -52,13 +53,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Terminus:style=Bold:size=14;1
+font-0 = Terminus:style=Bold:pixelsize=14;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Wuncon Siji:pixelsize=14;1
+font-2 = Wuncon Siji;1
 
 modules-left = i3
 modules-center = 
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu battery temperature date
+modules-right = filesystem alsa pulseaudio xkeyboard memory cpu battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -71,7 +72,7 @@ tray-padding = 2
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
-cursor-click = pointer
+cursor-click = default
 cursor-scroll = ns-resize
 
 [module/xwindow]
@@ -99,6 +100,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+mount-1 = /boot
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
@@ -235,13 +237,13 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
 date-alt = " %Y-%m-%d"
+date = 
 
-time = %H:%M
 time-alt = %H:%M:%S
+time = %H:%M
 
-format-prefix = 
+;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
