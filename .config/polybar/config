@@ -20,8 +20,8 @@
 ;background = ${xrdb:color0:#222}
 background = #222
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = ${xrdb:color7:#222}
+;foreground = #dfdfdf
 #foreground-alt = #555
 foreground-alt = #dfdfdf
 primary = #ffb52a
@@ -59,7 +59,7 @@ font-2 = Wuncon Siji;1
 
 modules-left = i3
 modules-center = 
-modules-right = filesystem alsa pulseaudio xkeyboard memory cpu battery temperature date
+modules-right = filesystem alsa pulseaudio xkeyboard eth wlan cpu memory swap battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -77,7 +77,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:60:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -185,30 +185,72 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
-label = CPU %percentage:2%%
+label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
+format = <label> <bar-used>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = MEM %percentage_used%%
+
+label = RAM %percentage_used%%
+
+bar-used-width = 10
+bar-used-gradient = true
+bar-used-foreground-0 = #449f3d
+bar-used-foreground-1 = #2f8419
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ed5456
+bar-used-indicator = █
+bar-used-indicator-font = 5
+bar-used-indicator-foreground = #fff
+bar-used-fill = █
+bar-used-fill-font = 5
+bar-used-empty = █
+bar-used-empty-font = 5
+bar-used-empty-foreground = #44
+
+[module/swap]
+type = internal/memory
+interval = 2
+format = <label> <bar-swap-used>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+
+label = SWAP %percentage_swap_used%%
+
+bar-swap-used-width = 5
+bar-swap-used-gradient = true
+bar-swap-used-foreground-0 = #449f3d
+bar-swap-used-foreground-1 = #2f8419
+bar-swap-used-foreground-2 = #f5a70a
+bar-swap-used-foreground-3 = #ed5456
+bar-swap-used-indicator = █
+bar-swap-used-indicator-font = 5
+bar-swap-used-indicator-foreground = #fff
+bar-swap-used-fill = █
+bar-swap-used-fill-font = 5
+bar-swap-used-empty = █
+bar-swap-used-empty-font = 5
+bar-swap-used-empty-foreground = #44
 
 [module/wlan]
 type = internal/network
-interface = 
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
+;format-disconnected =
+format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected = %ifname%
+label-disconnected-foreground = #555
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -219,7 +261,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = 
+interface = enp3s0
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -227,11 +269,11 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
+;format-disconnected =
+format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected = %ifname%
+label-disconnected-foreground = #555
 
 [module/date]
 type = internal/date
