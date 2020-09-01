@@ -265,9 +265,9 @@ label-disconnected-foreground = #555
 type = custom/script
 exec = /usr/libexec/myscripts/check_tun0.sh
 interval = 5
-label = BTSD
 label-foreground = #FFFF00
 format-underline = #268bd2
+label = %output%
 
 [module/date]
 type = internal/date

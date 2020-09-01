@@ -6,7 +6,7 @@ for i in tun0
     if [[ $RESULT == *"does not exist."* ]]; then
       exit 1
     else
-      echo "tun0 exists"
+      echo "tun0 $(ip -4 addr show dev tun0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')"
     fi
 
 done
