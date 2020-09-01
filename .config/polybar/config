@@ -59,7 +59,7 @@ font-2 = Wuncon Siji;1
 
 modules-left = i3
 modules-center = 
-modules-right = filesystem alsa pulseaudio xkeyboard eth wlan cpu memory swap battery temperature date
+modules-right = filesystem alsa pulseaudio xkeyboard eth wlan vpncheck cpu memory swap battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -260,6 +260,14 @@ format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname%
 label-disconnected-foreground = #555
+
+[module/vpncheck]
+type = custom/script
+exec = /usr/libexec/myscripts/check_tun0.sh
+interval = 5
+label = BTSD
+label-foreground = #FFFF00
+format-underline = #268bd2
 
 [module/date]
 type = internal/date
