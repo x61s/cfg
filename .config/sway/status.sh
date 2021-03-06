@@ -17,5 +17,5 @@ battery_status=$(cat /sys/class/power_supply/BAT1/status | tr '[:upper:]' '[:low
 battery_capacity=$(cat /sys/class/power_supply/BAT1/capacity)
 load_average=$(uptime | awk -F'[a-z]:' '{ print $2}' | sed -e 's/^ //g')
 
-echo "Uptime $uptime_formatted   $load_average   Linux $linux_version   Battery $battery_status $battery_capacity%   $date_formatted"
+echo "LA $load_average / BAT1 $battery_status $battery_capacity% / $date_formatted"
 
