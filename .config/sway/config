@@ -261,3 +261,4 @@ input * xkb_numlock enable
 
 
 for_window [title="Firefox - Sharing Indicator"] floating enable
+for_window [app_id="imv"] floating enable
