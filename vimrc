@@ -212,8 +212,4 @@ endif
 
 " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
 
-let g:netrw_banner = 0
-set wildmenu
-set pastetoggle=<F2>
-set list
-set listchars=eol:$,nbsp:_,tab:>-,trail:~,extends:>,precedes:<
+let g:netrw_banner=0
