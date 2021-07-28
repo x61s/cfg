@@ -4,7 +4,7 @@ MTM: 20U5-001XTX
 
 S/N: PF23D5CV
 
-Download Lenovo BIOS Bootable CD for your Laptop model from [official website] (https://pcsupport.lenovo.com/tr/en/products/laptops-and-netbooks/thinkpad-l-series-laptops/thinkpad-l14-type-20u5-20u6/downloads/driver-list/component?name=BIOS%2FUEFI).
+Download Lenovo BIOS Bootable CD for your Laptop model from [official website](https://pcsupport.lenovo.com/tr/en/products/laptops-and-netbooks/thinkpad-l-series-laptops/thinkpad-l14-type-20u5-20u6/downloads/driver-list/component?name=BIOS%2FUEFI).
 
 Install El Torito image extract utility.
 
