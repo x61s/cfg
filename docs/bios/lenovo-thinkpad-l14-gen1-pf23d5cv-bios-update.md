@@ -1,7 +1,5 @@
 # Lenovo Thinkpad L14 Gen1 BIOS Update
 
-![Lenovo Thinkpad L14 Gen1 BIOS Update](./images/20210729_003428.jpg "Bios update procedure")
-
 MTM: 20U5-001XTX
 
 S/N: PF23D5CV
