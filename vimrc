@@ -212,4 +212,8 @@ endif
 
 " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
 
-let g:netrw_banner=0
+" Custom parameters
+
+let g:netrw_banner = 0
+highlight VertSplit cterm=NONE
+
