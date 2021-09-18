@@ -216,4 +216,9 @@ endif
 
 let g:netrw_banner = 0
 highlight VertSplit cterm=NONE
-
+set title
+" set titlestring=%t%(\ %M%)
+set shiftwidth=4
+set tabstop=8
+set list
+set listchars=eol:↓,tab:\ \ ┊,trail:●,extends:…,precedes:…,space:·

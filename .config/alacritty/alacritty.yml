@@ -111,7 +111,7 @@ font:
     family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    # style: Bold
 
   # Italic font face
   #italic:
@@ -136,7 +136,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 10.0
+  size: 9.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -301,6 +301,11 @@ dynamic_title: true
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
   #unfocused_hollow: true
+cursor:
+  style:
+    blinking: Always
+    shape: Block
+  blink_interval: 500
 
 # Live config reload (changes require restart)
 #live_config_reload: true
