@@ -220,5 +220,17 @@ set title
 " set titlestring=%t%(\ %M%)
 set shiftwidth=4
 set tabstop=8
-set list
 set listchars=eol:↓,tab:\ \ ┊,trail:●,extends:…,precedes:…,space:·
+
+function! ToggleList()
+    if(&list == 0)
+        set list
+        echo "List Mode Enabled"
+    else
+        set nolist
+        echo "List Mode Disabled"
+    endif
+endfunction
+
+map <leader>l :call ToggleList()<cr>
+
