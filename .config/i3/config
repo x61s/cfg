@@ -109,6 +109,9 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
 
+floating_minimum_size 1280 x 80
+floating_maximum_size -1 x -1
+
 # change focus between tiling / floating windows
 # bindsym $mod+Shift+g focus mode_toggle
 
@@ -196,9 +199,16 @@ bar {
 	status_command i3status --config ~/.i3status-bar-0.conf
 	font pango:monospace bold 12
 	position bottom
-	tray_output none
+	# tray_output none
 	workspace_buttons yes
+	mode dock
 }
+
+# bar {
+# 	id bar-2
+# 	status_command /home/arinov/projects/personal/cbar/cbar
+# 	position top
+# }
 
 # bar {
 # 	id bar-1
@@ -211,7 +221,9 @@ bar {
 # Custom
 
 # Disable title bars
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
+
+# workspace_layout tabbed
 
 # Color Theme
 
@@ -251,4 +263,3 @@ exec --no-startup-id slack
 for_window [class="Firefox"] move to workspace $ws10
 exec --no-startup-id firefox
 
-workspace_layout default
