@@ -34,8 +34,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 5
-    y: 5
+    x: 15
+    y: 15
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -136,7 +136,9 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 8.5
+  # size: 8.5
+  size: 8
+  # size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -171,11 +173,11 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night Bright)
-#colors:
+colors:
   # Default colors
   #primary:
-  #  background: '#000000'
-  #  foreground: '#eaeaea'
+    #background: '#000000'
+    #foreground: '#eaeaea'
 
     # Bright and dim foreground colors
     #
@@ -189,9 +191,9 @@ font:
   #
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
-  #cursor:
-  #  text: '#000000'
-  #  cursor: '#ffffff'
+  cursor:
+    text: '#000000'
+    cursor: '#ffffff'
 
   # Selection colors
   #
