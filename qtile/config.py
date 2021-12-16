@@ -117,7 +117,7 @@ keys = [
     # Screenshot
     Key([], "Print",
        lazy.spawn("scrot -e 'mv $f ~/screenshots/'")),
-    # Key([], "Print",
+    # Key([mod], "Print",
     #    lazy.spawn("scrot --select --freeze -e 'mv $f ~/screenshots/'")),
 
 ]
@@ -168,7 +168,7 @@ screens = [
             [
                 widget.CurrentLayoutIcon(scale=0.5),
                 widget.CurrentLayout(),
-                widget.GroupBox(borderwidth=3),
+                widget.GroupBox(borderwidth=2, disable_drag=True),
                 widget.Sep(padding=10, linewidth=0),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -180,27 +180,31 @@ screens = [
                 ),
                 widget.Sep(padding=20),
                 widget.TextBox("BAT"),
-                widget.Battery(),
+                widget.Battery(discharge_char='v', update_interval=10),
                 widget.TextBox("VOL"),
                 widget.PulseVolume(step=10),
                 widget.TextBox("BL"),
                 widget.Backlight(backlight_name="amdgpu_bl0"),
                 widget.Sep(padding=20),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Clock(format='%a %I:%M/%d'),
+                widget.Clock(format='%a %H:%M/%d %Z'),
                 widget.Systray(),
             ],
             32, # 24
         ),
         top=bar.Bar(
             [
+                widget.CryptoTicker(crypto="BTC", update_interval=60),
+                widget.Sep(padding=20, linewidth=0),
+                widget.CryptoTicker(crypto="ETH", update_interval=60),
+                widget.Sep(padding=20, linewidth=0),
+                widget.CryptoTicker(crypto="MANA", update_interval=60),
                 widget.Spacer(length=bar.STRETCH),
                 widget.TextBox("NET"),
                 widget.Net(update_interval=2),
                 widget.Sep(padding=20, linewidth=0),
-                # widget.Wlan(interface="wlan0"),
                 widget.CPU(update_interval=2),
-                widget.ThermalZone(zone='0'),
+                widget.ThermalZone(zone='/sys/class/thermal/thermal_zone0/temp'),
                 widget.Sep(padding=20, linewidth=0),
                 widget.TextBox("MEM"),
                 widget.Memory(update_interval=2),
