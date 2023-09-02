@@ -1,0 +1,99 @@
+" Make external commands work through a pipe instead of a pseudo-tty
+"set noguipty
+
+" You can also specify a different font, overriding the default font
+"if has('gui_gtk')
+"  set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+"else
+"  set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
+"endif
+
+" If you want to run gvim with a dark background, try using a different
+" colorscheme or running 'gvim -reverse'.
+
+" Source a global configuration file if available
+if filereadable("/etc/vim/gvimrc.local")
+  source /etc/vim/gvimrc.local
+endif
+
+" Set font
+if has('gui_gtk')
+  set guifont=Terminus\ Regular\ 26
+  set lines=40
+  set columns=160
+endif
+
+set toolbariconsize=huge
+
+" `r`, `l` to enable right and left scrollbars
+set guioptions=
+set guioptions+=c
+
+" nmap <F6> :NERDTreeToggle<CR>
+" nnoremap <silent> <Leader>f :NERDTreeFind<CR>
+" let NERDTreeQuitOnOpen = 1 
+" let NERDTreeAutoDeleteBuffer = 1 
+" let NERDTreeMinimalUI = 1
+" let NERDTreeDirArrows = 1
+" let NERDTreeShowHidden = 1
+" let NERDTreeWinSize = 50
+
+autocmd VimResized * exe "normal \<c-w>="
+
+set laststatus=2
+
+nmap <F1> :Vexplore<CR>
+nmap <S-F1> :Sexplore<CR>
+nmap <F2> :set number!<CR>
+nmap <S-F2> :set list!<CR>
+nmap <F3> :buffers<CR>:buffer<Space>
+nmap <F4> :terminal<CR>
+nmap <S-F4> :tab terminal<CR>
+nmap <S-Tab> :bn<CR>
+nmap <C-Tab> :b#<CR>
+
+colorscheme torte
+
+set so=7 " Not loosing context when jumping pages
+
+let g:terminal_ansi_colors = [
+  \'#eeeeee', '#af0000', '#008700', '#5f8700',
+  \'#f0fafa', '#878787', '#005f87', '#444444',
+  \'#bcbcbc', '#d70000', '#d70087', '#8700af',
+  \'#d75f00', '#d75f00', '#005faf', '#005f87' ]
+
+set autochdir
+
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+if exists('g:loaded_fugitive')
+  set statusline+=\ %{fugitive#statusline()}
+endif
+
+if &diff
+	syntax off
+	hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
+	hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
+endif
+
+" let g:netrw_browse_split=4
+augroup InitNetrw
+    autocmd!
+    autocmd VimEnter * if argc() == 0 | Explore! | endif
+augroup end
+
+" set foldmethod=syntax
+" hi Folded guibg=grey guifg=black
+" hi FoldColumn guibg=darkgrey guifg=white
+
+" Fullscreen
+" map <silent> <F11>
+" \    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+
+" do not store global and local values in a session
+set ssop-=options
+
+" do not store folds
+set ssop-=folds
+
+let g:netrw_banner = 0
