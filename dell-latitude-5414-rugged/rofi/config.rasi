@@ -1,0 +1,12 @@
+configuration {
+ modi: "drun,run";
+ font: "Terminus Bold 30";
+ drun-display-format: "{name}";
+ show: "run";
+ }
+@theme "blue"
+
+window {
+ width: 1200px;
+ height: 500px;
+}
