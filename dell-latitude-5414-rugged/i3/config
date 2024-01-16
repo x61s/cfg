@@ -219,8 +219,8 @@ exec --no-startup-id "setxkbmap -layout us,ru -option grp:win_space_toggle"
 #exec --no-startup-id dbus-launch --exit-with-session i3
 workspace_layout tabbed
 
-bindsym XF86MonBrightnessUp exec brightnessctl -d "intel_backlight" set 20%+
-bindsym XF86MonBrightnessDown exec brightnessctl -d "intel_backlight" set 20%-
+bindsym XF86MonBrightnessUp exec brightnessctl -d "intel_backlight" set 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl -d "intel_backlight" set 10%-
 
 bindsym --release Print exec $HOME/scripts/screenshot.sh
 bindsym --release Shift+Print exec $HOME/scripts/screenshot-region.sh
