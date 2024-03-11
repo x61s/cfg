@@ -95,33 +95,13 @@ set laststatus=1
 set tabstop=2
 set shiftwidth=2
 
-" Custom Keymaps
 " F2: Toggle line numbers.
 nnoremap <F2> :set number!<CR>
 " F3: Toggle list (display unprintable characters).
 nnoremap <F3> :set list!<CR>
-" F10: Toggle different explore modes
-nnoremap <F10> :Sexplore<CR>
-nnoremap <C-F10> :Texplore<CR>
-nnoremap <S-F10> :Vexplore<CR>
-" F5: Copy text into the external buffer
-vnoremap <F5> "+y
-" Shift + F5: Paste text from the external buffer and set cursor to the end of
-" buffer text
-nnoremap <S-F5> "+p']
-inoremap <S-F5> <Esc>"+p']i
-nnoremap <C-F5> "+P']
-inoremap <C-F5> <Esc>"+P']i
-
-" vnoremap <F1> :w !<shell command><CR>
-vnoremap <F1> :w !espeak -p 0 -a 80 -g 0 -s 120 -v mb-en1<CR>
 
 colorscheme habamax
 
 set cursorline
 hi CursorLine term=bold cterm=bold
 highlight VertSplit ctermbg=None ctermfg=Yellow
-
-set showmode
-" set showtabline=2
-
