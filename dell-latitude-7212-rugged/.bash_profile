@@ -1,0 +1,2 @@
+export MOZ_USE_XINPUT2=1
+export GDK_DPI_SCALE=1.6
