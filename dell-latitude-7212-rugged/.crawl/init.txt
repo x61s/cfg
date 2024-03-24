@@ -1,0 +1,17 @@
+tile_cell_pixels = 64
+tile_filter_scaling = false
+tile_full_screen = true
+tile_font_stat_size = 10
+tile_font_msg_size = 16
+game_scale = 2
+tile_use_small_layout = true
+tile_water_anim = true
+tile_misc_anim = true
+tile_realtime_anim = true
+tile_grinch = true
+reduce_animations = false
+animate_equip_bar = true
+view_delay = 600
+clear_messages = true
+msg_condense_short = false
+show_travel_trail = true
