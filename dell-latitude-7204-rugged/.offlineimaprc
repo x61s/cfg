@@ -1,0 +1,17 @@
+[general]
+accounts = Personal
+
+[Account Personal]
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/gmail
+
+[Repository Remote]
+type = Gmail
+remoteuser = <USERNAME>@gmail.com
+remotepass = <PASSWORD>
+sslcacertfile = OS-DEFAULT
+realdelete = no
