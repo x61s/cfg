@@ -90,7 +90,7 @@ set ssop-=options
 set ssop-=folds
 
 set hlsearch
-set laststatus=1
+set laststatus=2
 
 set tabstop=2
 set shiftwidth=2
@@ -100,6 +100,8 @@ set shiftwidth=2
 nnoremap <F2> :set number!<CR>
 " F3: Toggle list (display unprintable characters).
 nnoremap <F3> :set list!<CR>
+" F4: Toggle cursor column.
+nnoremap <F4> :set cursorcolumn!<CR>
 " F10: Toggle different explore modes
 nnoremap <F10> :Sexplore<CR>
 nnoremap <C-F10> :Texplore<CR>
@@ -117,6 +119,17 @@ inoremap <C-F5> <Esc>"+P']i
 vnoremap <F1> :w !espeak -p 0 -a 80 -g 0 -s 120 -v mb-en1<CR>
 
 colorscheme habamax
+" Custom colors
+" Statusline background color
+highlight StatusLine ctermfg=black ctermbg=yellow guifg=black guibg=yellow
+" Set active tab (selected tab) background to yellow
+highlight TabLineSel ctermfg=black ctermbg=yellow guifg=black guibg=yellow
+" Set inactive tab background to default (or customize as desired)
+highlight TabLine ctermfg=white ctermbg=black guifg=white guibg=black
+" Set background color for the area surrounding the tab bar (fills empty space)
+highlight TabLineFill ctermfg=white ctermbg=black guifg=white guibg=black
+
+
 
 set cursorline
 hi CursorLine term=bold cterm=bold
