@@ -21,14 +21,14 @@ class Scheme(Default):
             fg = red if context.bad else blue
 
         if context.inactive_pane:
-            fg = 244
+            fg = 238
 
         if context.tab:
             if context.good:
                 bg = self.progress_bar_color
                 fg = 0
             else:
-                fg = 244
+                fg = 238
                 bg = 0
 
         return fg, bg, attr

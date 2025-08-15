@@ -216,6 +216,8 @@ bar {
 }
 
 exec --no-startup-id "setxkbmap -layout us,ru -option grp:win_space_toggle"
+exec --no-startup-id "xrandr --output eDP-1 --gamma 1:0.85:0.7"
+
 #exec --no-startup-id dbus-launch --exit-with-session i3
 workspace_layout tabbed
 
